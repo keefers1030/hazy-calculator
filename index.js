@@ -17,9 +17,29 @@ const calculate = (arr) => {
 
     //check if input is number or operand
     const operand = [`+`, `-`, `*`, `/`]
+    
+    switch (operand) {
+        case '+':
+            return (num1 + num2);
+
+        case '-':
+            return (num1 - num2);
+      
+        case '*':
+            return (num1 * num2);
+
+        case '/':
+            return (num1 / num2);
+    //if no operand, returns NaN
+        default: NaN
+            break;
+    }
+
+    let calculationSteps = arr.filter(calculations = () => {
+
+    }
 
     //if operand, use it to do an action against the numbers
-    //if no operand, returns NaN
 
     //check if null is included in values
     //if null, treat it as 0
