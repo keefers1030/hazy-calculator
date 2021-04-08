@@ -13,10 +13,10 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 * Empty string values (eg. `''`) should be ignored 
 * Non-numeric values (eg. `'foo'`) should be ignored*/
 
-const calculate = () => {
-    //take in an array
+const calculate = (arr) => {
 
     //check if input is number or operand
+    const operand = [`+`, `-`, `*`, `/`]
 
     //if operand, use it to do an action against the numbers
     //if no operand, returns NaN
