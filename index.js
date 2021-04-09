@@ -21,6 +21,7 @@ const filterString = (arr) => {
     //removes/ignores non numeric numbers
     //change string numbers to integers
     //change null to 0
+
     const inputs = ['', undefined, '']
 
     let validInputs = arr.filter(invalid => {
@@ -30,15 +31,23 @@ const filterString = (arr) => {
     return validInputs
 }
 
-console.log(filterString(['2', '+', 4]))
+console.log(filterString([10, '+', null]))
+
 
 
 //function 2
 //Make calculations
 const calculationSteps = (validInputs) => {
+
+    let operand = validInputs[1]
+
+    if (validInputs[0] || validInputs[2] === null) {
+        return 0
+    }
+
     let num1 = parseInt(validInputs[0])
     let num2 = parseInt(validInputs[2])
-    let operand = validInputs[1]
+
 
     switch (operand) {
         case '+':
@@ -53,12 +62,12 @@ const calculationSteps = (validInputs) => {
         case '/':
             return (num1 / num2)
         //if no operand, returns NaN
-        default: NaN
-            break
+        default:
+            return (NaN)
     }
 }
 
-console.log(calculationSteps(['2', '+', 4]))
+console.log(calculationSteps([null, '+', 4]))
 
 
 module.exports = calculationSteps
