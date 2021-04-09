@@ -31,7 +31,7 @@ const filterString = (arr) => {
     return validInputs
 }
 
-console.log(filterString([10, '+', null]))
+//console.log(filterString([10, '+', null]))
 
 
 
@@ -41,8 +41,11 @@ const calculationSteps = (validInputs) => {
 
     let operand = validInputs[1]
 
-    if (validInputs[0] || validInputs[2] === null) {
-        return 0
+    if (validInputs[0] === null) {
+        validInputs[0] = 0;
+    }
+    else if (validInputs[2] === null) {
+        validInputs[2] = 0;
     }
 
     let num1 = parseInt(validInputs[0])
@@ -67,7 +70,7 @@ const calculationSteps = (validInputs) => {
     }
 }
 
-console.log(calculationSteps([null, '+', 4]))
+console.log(calculationSteps([10, '+', null]))
 
 
 module.exports = calculationSteps
