@@ -15,42 +15,39 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 * Non-numeric values (eg. `'foo'`) should be ignored
 */
 
-
 const filterString = (arr) => {
     //loop through array
     //removes/ignores non numeric numbers
-    //change string numbers to integers
-    //change null to 0
 
-    const inputs = ['', undefined, '']
+    const inputs = ['', undefined, '', 'foo', 'bar']
 
     let validInputs = arr.filter(invalid => {
         return !inputs.includes(invalid)
     })
 
     return validInputs
+
 }
 
-//console.log(filterString([10, '+', null]))
+let arr = ['13', 'foo', '*', null]
+
+console.log(filterString(arr))
 
 
-
-//function 2
-//Make calculations
-const calculationSteps = (validInputs) => {
+// make calculations
+const calculate = (validInputs) => {
+    if (validInputs[0] === null) {
+        validInputs[0] = 0
+    }
+    else if (validInputs[2] === null) {
+        validInputs[2] = 0
+    }
 
     let operand = validInputs[1]
 
-    if (validInputs[0] === null) {
-        validInputs[0] = 0;
-    }
-    else if (validInputs[2] === null) {
-        validInputs[2] = 0;
-    }
-
+    //change string numbers to integers
     let num1 = parseInt(validInputs[0])
     let num2 = parseInt(validInputs[2])
-
 
     switch (operand) {
         case '+':
@@ -70,9 +67,6 @@ const calculationSteps = (validInputs) => {
     }
 }
 
-console.log(calculationSteps([10, '+', null]))
+//console.log(calculate(['13', '*', null]))
 
-
-module.exports = calculationSteps
-
-
+module.exports = calculate

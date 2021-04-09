@@ -7,7 +7,7 @@ describe('HazyCalculator', () => {
     const calculationSteps = ['2', '*', 4]
 
     expect(calculate(calculationSteps)).to.equal(8)
-  }) 
+  })
 
   it('treats null values as zeroes and includes them in the calculation', () => {
     const calculationSteps = [10, '+', null]
