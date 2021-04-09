@@ -16,8 +16,6 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 */
 
 
-
-
 const filterString = (arr) => {
     //loop through array
     //removes/ignores non numeric numbers
@@ -32,40 +30,35 @@ const filterString = (arr) => {
     return validInputs
 }
 
-console.log(filterString([2, '+', 4]))
+console.log(filterString(['2', '+', 4]))
 
 
 //function 2
 //Make calculations
 const calculationSteps = (validInputs) => {
+    let num1 = parseInt(validInputs[0])
+    let num2 = parseInt(validInputs[2])
+    let operand = validInputs[1]
 
-    let num1 = validInputs[0]
-    let num2 = validInputs[2]
-
-    console.log(num2)
-
-    const operands = [('+', '-', '*', '/')]
-
-    switch (operands) {
+    switch (operand) {
         case '+':
             return (num1 + num2)
 
         case '-':
-            return
+            return (num1 - num2)
 
         case '*':
-            return
+            return (num1 * num2)
 
         case '/':
-            return
+            return (num1 / num2)
         //if no operand, returns NaN
         default: NaN
             break
     }
-
 }
 
-console.log(calculationSteps([2, '+', 4]))
+console.log(calculationSteps(['2', '+', 4]))
 
 
 module.exports = calculationSteps
