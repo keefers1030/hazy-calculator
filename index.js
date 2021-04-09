@@ -20,13 +20,6 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 
 const filterString = (arr) => {
     //loop through array
-    for (let i = 0; i < arr.length; i++) {
-        let element = arr[i];
-        if (elment[i] === elment[i + 1]) {
-            block.push(element[i])
-        }
-
-    }
     //removes/ignores non numeric numbers
     //change string numbers to integers
     //change null to 0
@@ -40,6 +33,8 @@ const filterString = (arr) => {
         return validInputs
     }
 }
+
+console.log(filterString['3', '+', '7'])
 
 
 
@@ -67,6 +62,6 @@ const calculationSteps = (arr) => {
 
 }
 
-module.exports(calculationSteps)
+module.expors = calculationSteps
 
 
