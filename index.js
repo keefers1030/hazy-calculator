@@ -23,27 +23,27 @@ const filterString = (arr) => {
     //removes/ignores non numeric numbers
     //change string numbers to integers
     //change null to 0
-    const inputs = ['+', '-', '*', '/', 'null', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    const inputs = ['', undefined, '']
 
-    let validInputs = arr.filter(valid => {
-        return (inputs.includes(valid))
+    let validInputs = arr.filter(invalid => {
+        return !inputs.includes(invalid)
     })
 
     return validInputs
 }
 
-console.log(filterString([3, '+', '7']))
+console.log(filterString(['2', '*', 4]))
 
 
 
 //function 2
 //Make calculations
-const calculationSteps = (arr) => {
+const calculationSteps = (validInputs) => {
     const operand = ['+', '-', '*', '/']
 
     switch (operand) {
         case '+':
-            return (i[0] + i[2]);
+            return (parseInt(i[0]) + parseInt(i[2]));
 
         case '-':
             return (i[0] - i[2]);
