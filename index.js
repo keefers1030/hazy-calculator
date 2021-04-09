@@ -32,33 +32,41 @@ const filterString = (arr) => {
     return validInputs
 }
 
-console.log(filterString(['2', '*', 4]))
-
+console.log(filterString([2, '+', 4]))
 
 
 //function 2
 //Make calculations
 const calculationSteps = (validInputs) => {
-    const operand = ['+', '-', '*', '/']
 
-    switch (operand) {
+    let num1 = validInputs[0]
+    let num2 = validInputs[2]
+
+    console.log(num2)
+
+    const operands = [('+', '-', '*', '/')]
+
+    switch (operands) {
         case '+':
-            return (parseInt(i[0]) + parseInt(i[2]));
+            return (num1 + num2)
 
         case '-':
-            return (i[0] - i[2]);
+            return
 
         case '*':
-            return (i[0] * i[2]);
+            return
 
         case '/':
-            return (i[0] / i[2]);
+            return
         //if no operand, returns NaN
         default: NaN
-            break;
+            break
     }
 
 }
+
+console.log(calculationSteps([2, '+', 4]))
+
 
 module.exports = calculationSteps
 
