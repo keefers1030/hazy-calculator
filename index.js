@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable indent */
 /* eslint-disable spaced-comment */
 
@@ -11,72 +12,82 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 * `NULL` should be treated as zero
 * `undefined` values should be ignored
 * Empty string values (eg. `''`) should be ignored 
-* Non-numeric values (eg. `'foo'`) should be ignored*/
+* Non-numeric values (eg. `'foo'`) should be ignored
+*/
+
+
+//function 1
+    //loop through array
+    //remove empty inputs
+    //removes/ignores non numeric numbers
+
+
+    //change string numbers to integers
+    //change null to 0
+
+
+//function 2
+//Make calculations
 
 
 
-//filter through array and filter out non numbers and non-operators
 const filterString = (arr) => {
     const inputs = ['+', '-', '*', '/', 'null', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
     for (let i = 0; i < arr.length; i++) {
-        const element = arr[i]; {
+        let element = arr[i]
+
+        {
             let validInputs = arr.filter(invalid => {
-                inputs.includes(invalid)
-                return validInputs
+                !inputs.includes(invalid)
             })
+
+            return validInputs
         }
     }
+}
 
-    const checkString = (arr) => {
 
-        //loop through array
-        for (let i = 0; i < arr.length; i++) {
-            const element = arr[i]; {
 
-                const operand = [`+`, `-`, `*`, `/`]
-                //if operand, go to calculate
-                if (arr[i] === operand) {
-                    calculate(num1, num2)
-                }
-                else if (arr[i] === '')
-        }
-        }
+console.log(filterString([8, 9, 0, '9', '8', null]))
 
-        const calculate = (arr) => {
-            switch (operand) {
-                case '+':
-                    return (num1 + num2);
 
-                case '-':
-                    return (num1 - num2);
+const checkString = (arr) => {
 
-                case '*':
-                    return (num1 * num2);
+    //loop through array
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i]; {
 
-                case '/':
-                    return (num1 / num2);
-                //if no operand, returns NaN
-                default: NaN
-                    break;
+            const operand = [`+`, `-`, `*`, `/`]
+            //if operand, go to calculate
+            if (arr[i] === operand) {
+                calculate(num1, num2)
             }
-
-
-            //check if input is number or operand
-
-            //if operand, use it to do an action against the numbers
-
-
-            //check if null is included in values
-            //if null, treat it as 0
-
-            //ignore undefined and empty string values and continues operation
-            //ignores non-numeric values  and continues operation
-
-
-
-
-
-
-            //multiplies two numbers when one is stringified
+            else if (arr[i] === '')
         }
+    }
+}
+
+const calculate = (arr) => {
+    switch (operand) {
+        case '+':
+            return (num1 + num2);
+
+        case '-':
+            return (num1 - num2);
+
+        case '*':
+            return (num1 * num2);
+
+        case '/':
+            return (num1 / num2);
+        //if no operand, returns NaN
+        default: NaN
+            break;
+    }
+
+}
+    
+
+
+
