@@ -23,18 +23,16 @@ const filterString = (arr) => {
     //removes/ignores non numeric numbers
     //change string numbers to integers
     //change null to 0
-    {
-        const inputs = ['+', '-', '*', '/', 'null', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    const inputs = ['+', '-', '*', '/', 'null', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-        let validInputs = arr.filter(invalid => {
-            !inputs.includes(invalid)
-        })
+    let validInputs = arr.filter(valid => {
+        return (inputs.includes(valid))
+    })
 
-        return validInputs
-    }
+    return validInputs
 }
 
-console.log(filterString['3', '+', '7'])
+console.log(filterString([3, '+', '7']))
 
 
 
@@ -62,6 +60,6 @@ const calculationSteps = (arr) => {
 
 }
 
-module.expors = calculationSteps
+module.exports = calculationSteps
 
 
