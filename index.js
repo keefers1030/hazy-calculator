@@ -13,39 +13,54 @@ Our upstream data is inconsistent, so we _intentionally_ accept it and deal with
 * Empty string values (eg. `''`) should be ignored 
 * Non-numeric values (eg. `'foo'`) should be ignored*/
 
-const calculate = (arr) => {
+const checkString = (arr) => {
 
-    //check if input is number or operand
-    const operand = [`+`, `-`, `*`, `/`]
-    
-    switch (operand) {
-        case '+':
-            return (num1 + num2);
+    //loop through array
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i]; {
 
-        case '-':
-            return (num1 - num2);
-      
-        case '*':
-            return (num1 * num2);
-
-        case '/':
-            return (num1 / num2);
-    //if no operand, returns NaN
-        default: NaN
-            break;
+            const operand = [`+`, `-`, `*`, `/`]
+            //if operand, go to calculate
+            if (arr[i] === operand) {
+                calculate()
+            }
+        }
     }
 
-    let calculationSteps = arr.filter(calculations = () => {
+    const calculate = (arr) => {
+        switch (operand) {
+            case '+':
+                return (num1 + num2);
 
+            case '-':
+                return (num1 - num2);
+
+            case '*':
+                return (num1 * num2);
+
+            case '/':
+                return (num1 / num2);
+            //if no operand, returns NaN
+            default: NaN
+                break;
+        }
+
+
+        //check if input is number or operand
+
+        //if operand, use it to do an action against the numbers
+
+
+        //check if null is included in values
+        //if null, treat it as 0
+
+        //ignore undefined and empty string values and continues operation
+        //ignores non-numeric values  and continues operation
+
+
+
+
+
+
+        //multiplies two numbers when one is stringified
     }
-
-    //if operand, use it to do an action against the numbers
-
-    //check if null is included in values
-    //if null, treat it as 0
-
-    //ignore undefined and empty string values and continues operation
-    //ignores non-numeric values  and continues operation
-
-    //multiplies two numbers when one is stringified'
-}
